@@ -13,6 +13,7 @@
     "@astrojs/vercel": "^8.0.4",
     "@embedpdf/core": "^1.0.20",
     "@embedpdf/engines": "^1.0.20",
+    "@embedpdf/plugin-export": "^1.0.20",
     "@embedpdf/plugin-loader": "^1.0.20",
     "@embedpdf/plugin-render": "^1.0.20",
     "@embedpdf/plugin-scroll": "^1.0.20",
@@ -25,6 +26,7 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "astro": "^5.8.1",
+    "lucide-react": "^0.541.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.8"
