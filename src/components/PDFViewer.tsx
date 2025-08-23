@@ -1,117 +1,75 @@
-import { useRef } from 'react';
+import { createPluginRegistration } from '@embedpdf/core';
 import { EmbedPDF } from '@embedpdf/core/react';
 import { usePdfiumEngine } from '@embedpdf/engines/react';
-import { createPluginRegistration } from '@embedpdf/core';
-import { LoaderPluginPackage } from '@embedpdf/plugin-loader';
+
+// Import the essential plugins
 import { ViewportPluginPackage } from '@embedpdf/plugin-viewport';
-import { ScrollPluginPackage, ScrollStrategy } from '@embedpdf/plugin-scroll';
-import { ZoomMode, ZoomPluginPackage } from '@embedpdf/plugin-zoom';
-import { TilingPluginPackage } from '@embedpdf/plugin-tiling';
-import { RenderPluginPackage } from '@embedpdf/plugin-render';
-import { InteractionManagerPluginPackage } from '@embedpdf/plugin-interaction-manager';
-import { SelectionPluginPackage } from '@embedpdf/plugin-selection';
 import { Viewport } from '@embedpdf/plugin-viewport/react';
+import { ScrollPluginPackage } from '@embedpdf/plugin-scroll';
 import { Scroller } from '@embedpdf/plugin-scroll/react';
-import { TilingLayer } from '@embedpdf/plugin-tiling/react';
+import { LoaderPluginPackage } from '@embedpdf/plugin-loader';
+import { RenderPluginPackage } from '@embedpdf/plugin-render';
 import { RenderLayer } from '@embedpdf/plugin-render/react';
-import {
-	GlobalPointerProvider,
-	PagePointerProvider,
-} from '@embedpdf/plugin-interaction-manager/react';
-import { SelectionLayer } from '@embedpdf/plugin-selection/react';
+import { ZoomPluginPackage } from '@embedpdf/plugin-zoom';
+import { ExportPluginPackage } from '@embedpdf/plugin-export';
+import { ZoomToolbar } from './ZoomToolbar'; // 1. Import the toolbar
+import { Download } from '@embedpdf/plugin-export/react';
+
+
+// 1. Register the plugins you need
+const plugins = [
+	createPluginRegistration(LoaderPluginPackage, {
+		loadingOptions: {
+			type: 'url',
+			pdfFile: {
+				id: 'rubem-cv',
+				url: 'https://rubuy.me/rubem_cv.pdf',
+			},
+		},
+	}),
+	createPluginRegistration(ViewportPluginPackage),
+	createPluginRegistration(ScrollPluginPackage),
+	createPluginRegistration(RenderPluginPackage),
+	createPluginRegistration(ZoomPluginPackage, {
+		defaultZoomLevel: 1.5,
+	}),
+	createPluginRegistration(ExportPluginPackage),
+];
 
 export default function PDFViewer() {
-	const containerRef = useRef<HTMLDivElement>(null);
-	const { engine, isLoading, error } = usePdfiumEngine();
-
-	if (error) {
-		return <div>Error: {error.message}</div>;
-	}
+	// 2. Initialize the engine with the React hook
+	const { engine, isLoading } = usePdfiumEngine();
 
 	if (isLoading || !engine) {
-		return <div>Loading...</div>;
+		return (
+			<div className="flex h-full w-full items-center justify-center">
+				<div className="relative h-16 w-16 animate-spin rounded-full">
+					<div className="absolute top-0 left-1/2 h-4 w-4 -translate-x-1/2 transform rounded-full bg-white"></div>
+				</div>
+			</div>
+		);
 	}
 
+	// 3. Wrap your UI with the <EmbedPDF> provider
 	return (
-		<div className="flex h-screen flex-1 flex-col overflow-hidden" ref={containerRef}>
-			<div className="flex flex-1 overflow-hidden">
-				<EmbedPDF
-					engine={engine}
-					plugins={[
-						createPluginRegistration(LoaderPluginPackage, {
-							loadingOptions: {
-								type: 'url',
-								pdfFile: {
-									id: '1',
-									url: 'https://rubuy.me/rubem_cv.pdf',
-								},
-								options: {
-									mode: 'full-fetch',
-								},
-							},
-						}),
-						createPluginRegistration(ViewportPluginPackage, {
-							viewportGap: 10,
-						}),
-						createPluginRegistration(ScrollPluginPackage, {
-							strategy: ScrollStrategy.Vertical,
-						}),
-						createPluginRegistration(RenderPluginPackage),
-						createPluginRegistration(TilingPluginPackage, {
-							tileSize: 768,
-							overlapPx: 2.5,
-							extraRings: 0,
-						}),
-						createPluginRegistration(ZoomPluginPackage, {
-							defaultZoomLevel: ZoomMode.FitPage,
-						}),
-						createPluginRegistration(InteractionManagerPluginPackage),
-						createPluginRegistration(SelectionPluginPackage),
-					]}
-				>
-					{({ pluginsReady }) => (
-						<GlobalPointerProvider>
-							<Viewport className="h-full w-full flex-1 select-none overflow-auto bg-[#262624]">
-								{pluginsReady ? (
-									<Scroller
-										renderPage={({
-											pageIndex,
-											scale,
-											width,
-											height,
-											rotation,
-											rotatedWidth,
-											rotatedHeight,
-										}) => (
-											<PagePointerProvider
-												rotation={rotation}
-												scale={scale}
-												pageWidth={rotatedWidth}
-												pageHeight={rotatedHeight}
-												pageIndex={pageIndex}
-												style={{
-													width,
-													height,
-												}}
-											>
-												<RenderLayer pageIndex={pageIndex} className="pointer-events-none" />
-												<TilingLayer
-													pageIndex={pageIndex}
-													scale={scale}
-													className="pointer-events-none"
-												/>
-												<SelectionLayer pageIndex={pageIndex} scale={scale} />
-											</PagePointerProvider>
-										)}
-									/>
-								) : (
-									<div>Loading plugins...</div>
-								)}
-							</Viewport>
-						</GlobalPointerProvider>
-					)}
-				</EmbedPDF>
-			</div>
-		</div>
+		<div >
+			<EmbedPDF engine={engine} plugins={plugins}>
+				<div className="flex h-full flex-col">
+					<ZoomToolbar />
+					< Viewport
+						className="h-full w-full flex-1 select-none overflow-auto bg-[#262624]"
+					>
+						<Scroller
+							renderPage={({ width, height, pageIndex }) => (
+								<div style={{ width, height }}>
+									<RenderLayer pageIndex={pageIndex} />
+								</div>
+							)}
+						/>
+					</Viewport>
+					<Download />
+				</div>
+			</EmbedPDF >
+		</div >
 	);
-}
+};
