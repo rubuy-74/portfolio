@@ -12,20 +12,6 @@
     ]
   },
   {
-    "title": "tinyrp",
-    "slug": "tinyrp",
-    "num_contributors": 1,
-    "description": "Implemented a reverse proxy server in Golang.",
-    "github_link": "https://github.com/rubuy-74/tinyrp",
-    "active_link": true,
-    "categories": [
-      "golang",
-			"docker",
-			"make",
-			"viper"
-    ]
-  },
-  {
     "title": "everyday.dev",
     "slug": "everyday-dev",
     "num_contributors": 4,

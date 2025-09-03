@@ -1,0 +1,19 @@
+---
+import PlaygroundCard from "./PlaygroundCard.astro";
+import playgroundProjects from "../data/playground-projects.json";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+        playgroundProjects.map((project) => (
+            <PlaygroundCard
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                link={project.link ?? undefined}
+                active_link={project.active_link}
+                image={project.image ?? undefined}
+            />
+        ))
+    }
+</div>

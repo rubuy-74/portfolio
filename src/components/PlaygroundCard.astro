@@ -1,0 +1,61 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    tags: string[];
+    link?: string;
+    active_link: boolean;
+    image?: string;
+}
+
+const { title, description, tags, link, active_link, image } = Astro.props;
+---
+
+<div class="border rounded p-3 my-3 md:p-5 lg:m-1 border-white hover:bg-[#30302e]">
+    {active_link ? (
+        <a href={link} class="no-underline" target="_blank" rel="noopener noreferrer">
+            <div class="flex flex-col gap-2">
+                <div class="flex justify-between items-center gap-2">
+                    <div class="text-white md:max-w-full text-xl">{title}</div>
+                    {image && (
+                        <img 
+                            src={image} 
+                            alt={`${title} logo`} 
+                            class="w-8 h-8 object-contain"
+                        />
+                    )}
+                </div>
+                <div class="text-sm text-gray-300">
+                    <div class="flex gap-1 text-sm text-[#c96442] font-bold overflow-hidden text-ellipsis">
+                        {tags.map((tag, idx) => (
+                            <div class="text-nowrap">
+                                {idx === 0 ? tag : `| ${tag}`}
+                            </div>
+                        ))}
+                    </div>
+                    <div>
+                        {description}
+                    </div>
+                </div>
+            </div>
+        </a>
+    ) : (
+        <div class="flex flex-col gap-2">
+            <div class="flex justify-between gap-2">
+                <div class="text-white md:max-w-full text-xl">{title}</div>
+            </div>
+            <div class="text-sm text-gray-300">
+                <div class="flex gap-1 text-sm text-[#c96442] font-bold overflow-hidden text-ellipsis">
+                    {tags.map((tag, idx) => (
+                        <div class="text-nowrap">
+                            {idx === 0 ? tag : `| ${tag}`}
+                        </div>
+                    ))}
+                </div>
+                <div>
+                    {description}
+                </div>
+            </div>
+        </div>
+    )}
+</div>
