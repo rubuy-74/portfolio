@@ -4,7 +4,7 @@
         "slug": "pstr",
         "description": "A Regex Engine that was built in Golang",
         "tags": ["golang", "regex", "learning"],
-        "active_link": false,
+        "active_link": true,
         "link": "/playground/pstr",
         "image": "/playground/pstr.png"
     },

@@ -3,7 +3,7 @@ import PlaygroundCard from "./PlaygroundCard.astro";
 import playgroundProjects from "../data/playground-projects.json";
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
     {
         playgroundProjects.map((project) => (
             <PlaygroundCard
