@@ -2,7 +2,7 @@
     {
         "title": "pstr",
         "slug": "pstr",
-        "description": "A Regex Engine that built in Golang",
+        "description": "A Regex Engine built in Golang",
         "tags": ["golang", "regex", "learning"],
         "active_link": true,
         "link": "/playground/pstr",
