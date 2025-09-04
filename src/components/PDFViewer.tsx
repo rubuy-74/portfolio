@@ -43,9 +43,7 @@ export default function PDFViewer() {
 	if (isLoading || !engine) {
 		return (
 			<div className="flex h-full w-full items-center justify-center">
-				<div className="relative h-16 w-16 animate-spin rounded-full">
-					<div className="absolute top-0 left-1/2 h-4 w-4 -translate-x-1/2 transform rounded-full bg-white"></div>
-				</div>
+				Loading...
 			</div>
 		);
 	}
