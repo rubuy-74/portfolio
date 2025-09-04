@@ -43,8 +43,12 @@ export default function RegexChecker() {
 
     return (
         <div className="flex flex-col gap-4">
-            <h1 className="text-3xl font-bold">pstr - Regex Engine</h1>
-            
+            <div>
+              <h1 className="text-3xl font-bold">pstr - Regex Engine</h1>
+              <h2 className='text-[#c96442]'>
+                Note: This project is in ongoing development 
+              </h2>
+            </div>
             <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-1">
                     <label className="text-sm">Regular Expression</label>
