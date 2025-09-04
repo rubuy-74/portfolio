@@ -9,42 +9,6 @@
         "image": "/playground/pstr.png"
     },
     {
-        "title": "Gen QR",
-        "slug": "gen-QR",
-        "description": "Instead of Gen AI we have Gen QR, which is just a QR Code Generator",
-        "tags": ["QR", "golang", "learning"],
-        "active_link": false,
-        "link": "/playground/gen-qr",
-        "image": "/playground/qr.png"
-    },
-    {
-        "title": "moji",
-        "slug": "moji",
-        "description": "Give it a concept, idea or prompt and it returns a list of emojis that correspond with that prompt",
-        "tags": ["emojis", "ai", "python", "learning"],
-        "active_link": false,
-        "link": "/playground/moji",
-        "image": "/playground/moji.png"
-    },
-    {
-        "title": "http.brazil",
-        "slug": "http-brazil",
-        "description": "Images for HTTP Codes based on Brazilian Memes",
-        "tags": ["brazil", "typescript"],
-        "active_link": false,
-        "link": "/playground/http.brazil",
-        "image": "/playground/brazil.png"
-    },
-    {
-        "title": "limq",
-        "slug": "limq",
-        "description": "Rate Limiter (used in all other applications)",
-        "tags": ["golang", "rate-limiter","system-design","learning"],
-        "active_link": false,
-        "link": "/playground/limq",
-        "image": "/playground/limq.png"
-    },
-    {
         "title": "More Coming Soon...",
         "slug": "coming-soon",
         "description": "Stay tuned for more exciting projects in development",
