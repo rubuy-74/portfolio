@@ -30,14 +30,12 @@ const plugins = [
 	createPluginRegistration(ViewportPluginPackage),
 	createPluginRegistration(ScrollPluginPackage),
 	createPluginRegistration(RenderPluginPackage),
-	createPluginRegistration(ZoomPluginPackage, {
-		defaultZoomLevel: 1.5,
-	}),
+	createPluginRegistration(ZoomPluginPackage, {}),
 	createPluginRegistration(ExportPluginPackage),
 ];
 
 export default function PDFViewer() {
-	// 2. Initialize the engine with the React hook
+	// 2. Initialize the engine with the Rct hook
 	const { engine, isLoading } = usePdfiumEngine();
 
 	if (isLoading || !engine) {
@@ -55,7 +53,7 @@ export default function PDFViewer() {
 				<div className="flex h-full flex-col">
 					<ZoomToolbar />
 					< Viewport
-						className="h-full w-full flex-1 select-none overflow-auto bg-[#262624]"
+						className="h-full w-full flex-1 select-none overflow-auto bg-background"
 					>
 						<Scroller
 							renderPage={({ width, height, pageIndex }) => (

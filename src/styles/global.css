@@ -12,7 +12,7 @@
   }
 
   a {
-    @apply text-blue-400 hover:underline;
+    @apply text-blue-400;
   }
 
   ul {

@@ -9,11 +9,9 @@ export const ZoomToolbar = () => {
 	const { provides: exportProvider } = useExportCapability()
 
 
-
 	if (!zoomProvides) {
 		return null;
 	}
-
 
 	return (
 		<div className='flex justify-between border p-3 border-dashed rounded'>
