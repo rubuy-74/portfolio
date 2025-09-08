@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
+    "@astrojs/tailwind": "^6.0.2",
     "@astrojs/vercel": "^8.0.4",
     "@embedpdf/core": "^1.0.20",
     "@embedpdf/engines": "^1.0.20",
@@ -22,13 +23,11 @@
     "@embedpdf/plugin-viewport": "^1.0.20",
     "@embedpdf/plugin-zoom": "^1.0.20",
     "@lucide/astro": "^0.511.0",
-    "@tailwindcss/vite": "^4.1.8",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "astro": "^5.8.1",
     "lucide-react": "^0.541.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.8"
+    "react-dom": "^19.1.1"
   }
 }
