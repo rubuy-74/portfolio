@@ -9,12 +9,13 @@ export default function RegexChecker() {
 	const [regex, setRegex] = useState('')
 	const [testString, setTestString] = useState('')
 	const [result, setResult] = useState<ValidationResult>({ isValid: true, loading: false })
+	const [error, setError] = useState('')
 
 	const handleCheck = async () => {
 		setResult({ isValid: false, loading: true })
 
 		try {
-			const response = await fetch('/api/check', {
+			const response = await fetch('/api/pstr/check', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -26,8 +27,10 @@ export default function RegexChecker() {
 			})
 
 			if (!response.ok) {
+				setError("error: the application failed")
 				throw new Error('Network response was not ok')
 			}
+			setError("")
 
 			const data = await response.json()
 
@@ -72,14 +75,22 @@ export default function RegexChecker() {
 						value={testString}
 						onChange={(e) => setTestString(e.target.value)}
 					></textarea>
+
+					<div className='text-red-500'>
+						{error}
+					</div>
+
 				</div>
 
+
 				<div className='flex justify-between'>
-					<div className={`flex items-center border px-3 py-1 rounded-md text-sm font-medium ${result.isValid ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'
-						}`}>
+					<div className={`flex items-center border px-3 py-1 rounded-md text-sm font-medium ${result.isValid
+						? 'bg-green-500/20 text-green-500 border-green-600'
+						: 'bg-red-500/20 text-red-500 border-red-600'}`}>
 						{result.isValid ? 'Valid' : 'Invalid'}
 					</div>
 					<button
+						type="button"
 						onClick={handleCheck}
 						disabled={result.loading}
 						className="self-end px-4 py-2 rounded-lg bg-secondary hover:bg-[#a0503a] transition-colors text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed"

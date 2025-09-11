@@ -9,10 +9,10 @@ export default defineConfig({
 	vite: {
 		server: {
 			proxy: {
-				'/api/check': {
+				'/api/pstr/check': {
 					target: 'https://pstr-production.up.railway.app',
 					changeOrigin: true,
-					rewrite: (path) => path.replace(/^\/api/, ''),
+					rewrite: (path) => path.replace(/^\/api\/pstr/, ''),
 				},
 			},
 		},

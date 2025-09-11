@@ -7,5 +7,14 @@
         "active_link": true,
         "link": "/playground/pstr",
         "image": "/playground/pstr.png"
+    },
+    {
+        "title": "Coming soon...",
+        "slug": "coming-soon",
+        "description": "There are more projects to come",
+        "tags": ["future","planning","non-existent"],
+        "active_link": false,
+        "link": "/playground/coming-soon",
+        "image": "/playground/coming_soon.png"
     }
 ]
