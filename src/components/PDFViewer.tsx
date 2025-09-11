@@ -10,11 +10,15 @@ import { Scroller } from '@embedpdf/plugin-scroll/react';
 import { LoaderPluginPackage } from '@embedpdf/plugin-loader';
 import { RenderPluginPackage } from '@embedpdf/plugin-render';
 import { RenderLayer } from '@embedpdf/plugin-render/react';
-import { ZoomPluginPackage } from '@embedpdf/plugin-zoom';
 import { ExportPluginPackage } from '@embedpdf/plugin-export';
 import { ZoomToolbar } from './ZoomToolbar'; // 1. Import the toolbar
 import { Download } from '@embedpdf/plugin-export/react';
-
+import { TilingPluginPackage } from '@embedpdf/plugin-tiling/react'
+import { TilingLayer } from '@embedpdf/plugin-tiling/react';
+import {
+	ZoomPluginPackage,
+	ZoomMode,
+} from '@embedpdf/plugin-zoom';
 
 // 1. Register the plugins you need
 const plugins = [
@@ -28,10 +32,22 @@ const plugins = [
 		},
 	}),
 	createPluginRegistration(ViewportPluginPackage),
-	createPluginRegistration(ScrollPluginPackage),
+	createPluginRegistration(ScrollPluginPackage, {
+		initialPage: 1,
+		pageGap: 0,
+	}),
 	createPluginRegistration(RenderPluginPackage),
-	createPluginRegistration(ZoomPluginPackage, {}),
+	createPluginRegistration(ZoomPluginPackage, {
+		defaultZoomLevel: ZoomMode.FitWidth,
+	}),
 	createPluginRegistration(ExportPluginPackage),
+
+	createPluginRegistration(TilingPluginPackage, {
+		tileSize: 768,
+		overlapPx: 5,
+		extraRings: 1,
+	}),
+
 ];
 
 export default function PDFViewer() {
@@ -56,9 +72,10 @@ export default function PDFViewer() {
 						className="h-full w-full flex-1 select-none overflow-auto bg-background"
 					>
 						<Scroller
-							renderPage={({ width, height, pageIndex }) => (
+							renderPage={({ width, height, pageIndex, scale }) => (
 								<div style={{ width, height }}>
-									<RenderLayer pageIndex={pageIndex} />
+									<RenderLayer pageIndex={pageIndex} scale={.5} />
+									<TilingLayer pageIndex={pageIndex} scale={scale} />
 								</div>
 							)}
 						/>
