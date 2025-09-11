@@ -8,13 +8,12 @@ export const ZoomToolbar = () => {
 	const { provides: zoomProvides, state: zoomState } = useZoom();
 	const { provides: exportProvider } = useExportCapability()
 
-
 	if (!zoomProvides) {
 		return null;
 	}
 
 	return (
-		<div className='flex justify-between border p-3 border-dashed rounded'>
+		<div className='flex justify-between border p-3 my-2 border-dashed rounded'>
 			<div className='flex gap-2'>
 				<span>Zoom: {Math.round(zoomState.currentZoomLevel * 100)}%</span>
 				<div className='flex justify-center' >
