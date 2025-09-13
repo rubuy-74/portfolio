@@ -18,6 +18,12 @@ export default defineConfig({
 		},
 	},
 
+	server: {
+		headers: {
+			"Access-Control-Allow-Origin": "cv.rubuy.me",
+		}
+	},
+
 	adapter: vercel({
 		webAnalytics: {
 			enabled: true,
