@@ -27,7 +27,7 @@ const plugins = [
 			type: 'url',
 			pdfFile: {
 				id: 'rubem-cv',
-				url: 'https://rubuy.me/rubem-cv.pdf',
+				url: 'https://cv.rubuy.me',
 			},
 		},
 	}),
