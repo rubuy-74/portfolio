@@ -61,15 +61,13 @@ const project = projects.find((project) => project.slug == id)
         {project?.num_contributors} 
       </div>
     </div>
-    <div class="flex flex-row gap-2 md:justify-between md:items-center">
+    <div class="flex flex-row gap-2 md:justify-between md:items-center p-1">
       <a href={project?.github_link} class="text-secondary">
         <Github/>
       </a>
-      <!-- {project?.link && 
-        <a href={project?.link} class="text-[#c96442]">
-          <SquareArrowOutUpRight />
-        </a>
-      } -->
+			<!-- <a href={project?.link} class="text-secondary" disabled={true}> -->
+			<!-- 	<SquareArrowOutUpRight disabled/> -->
+			<!-- </a> -->
     </div>
   </div>
   {ProjectContent ? (
