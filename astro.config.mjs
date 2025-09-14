@@ -6,23 +6,7 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://rubuy.me',
-	vite: {
-		server: {
-			proxy: {
-				'/api/pstr/check': {
-					target: 'https://pstr-production.up.railway.app',
-					changeOrigin: true,
-					rewrite: (path) => path.replace(/^\/api\/pstr/, ''),
-				},
-			},
-		},
-	},
-
-	server: {
-		headers: {
-			"Access-Control-Allow-Origin": "cv.rubuy.me",
-		}
-	},
+	output: 'server',
 
 	adapter: vercel({
 		webAnalytics: {
