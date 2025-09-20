@@ -1,5 +1,58 @@
 [
   {
+    "title": "eifn",
+    "slug": "eifn",
+    "num_contributors": 1,
+    "description": "",
+    "github_link": "https://github.com/rubuy-74/eifn",
+    "active_link": true,
+    "categories": [
+      "cloudflare workers",
+			"web",
+			"extension"
+    ]
+  },
+  {
+    "title": "pstr",
+    "slug": "pstr",
+    "num_contributors": 1,
+    "description": "",
+    "github_link": "https://github.com/rubuy-74/pstr",
+    "active_link": true,
+    "categories": [
+      "golang",
+			"regex",
+			"testing"
+    ]
+  },
+  {
+    "title": "Dynamic CV",
+    "slug": "dynamic-cv",
+    "num_contributors": 1,
+    "description": "This project sets up a CI/CD pipeline using Typst, GitHub Actions, and Cloudflare Workers to always have the latest version of my CV automatically built and accessible online.",
+    "github_link": "https://github.com/rubuy-74/cv",
+    "active_link": true,
+    "categories": [
+			"typst",
+      "cloudflare workers",
+			"github actions",
+			"CI/CD"
+    ]
+  },
+  {
+    "title": "Portfolio",
+    "slug": "portfolio",
+    "num_contributors": 1,
+    "description": "",
+    "github_link": "https://github.com/rubuy-74/portfolio",
+    "active_link": true,
+    "categories": [
+      "astro",
+			"markdown",
+			"web"
+    ]
+  },
+  {
     "title": "uSettle",
     "slug": "usettle",
     "num_contributors": 4,
