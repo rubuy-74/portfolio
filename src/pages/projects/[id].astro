@@ -5,45 +5,40 @@ import Layout from '../../layouts/Layout.astro';
 import {Content as EverydayDev}  from '../../data/projects/everyday-dev.md';
 import {Content as LTWPreLoved} from '../../data/projects/ltw-pre-loved.md';
 import {Content as Niployments} from '../../data/projects/niployments.md';
-import {Content as Portifolio} from '../../data/projects/portifolio.md';
+import {Content as Portfolio} from '../../data/projects/portfolio.md';
 import {Content as SimpleTombOfTheMask} from '../../data/projects/simple-tomb-of-the-mask.md';
 import {Content as Uni} from '../../data/projects/uni.md';
 import {Content as USettle} from '../../data/projects/usettle.md';
 import {Content as WebsiteAE} from '../../data/projects/website-ae.md';
 import {Content as WebsiteNIAEFEUP} from '../../data/projects/website-niaefeup.md';
 import {Content as Tinyrp} from '../../data/projects/tiny-rp.md';
+import {Content as DynamicCV} from '../../data/projects/dynamic-cv.md';
+import {Content as Pstr} from '../../data/projects/pstr.md';
 
 import projects from '../../data/projects.json'
 import { Users,Github, SquareArrowOutUpRight } from '@lucide/astro';
 
 export async function getStaticPaths() {
-  return [
-    // { params: { /* required */ }, props: { /* optional */ } },
-    { params: { id: 'everyday-dev' } }, // [post] is the parameter
-    { params: { id: 'ltw-pre-loved' } }, // [post] is the parameter
-    { params: { id: 'niployments' } }, // [post] is the parameter
-    { params: { id: 'portifolio' } }, // [post] is the parameter
-    { params: { id: 'simple-tomb-of-the-mask' } }, // [post] is the parameter
-    { params: { id: 'uni' } }, // [post] is the parameter
-    { params: { id: 'usettle' } }, // [post] is the parameter
-    { params: { id: 'website-ae' } }, // [post] is the parameter
-    { params: { id: 'website-niaefeup' } }, // [post] is the parameter
-		{ params: { id: 'tinyrp' } }
-    // ...
-  ];
+	return projects.map(project => {
+		return {
+				params: { id: project.slug } 
+			}
+	})
 }
 
 const projectsMap = {
+	"dynamic-cv": DynamicCV,
   "everyday-dev": EverydayDev,
   "ltw-pre-loved":LTWPreLoved,
   "niployments":Niployments,
-  "portifolio":Portifolio,
+  "portfolio":Portfolio,
+	"pstr": Pstr,
   "simple-tomb-of-the-mask":SimpleTombOfTheMask,
   "uni":Uni,
   "usettle": USettle,
   "website-ae": WebsiteAE,
   "website-niaefeup": WebsiteNIAEFEUP,
-	"tinyrp": Tinyrp
+	"tinyrp": Tinyrp,
 };
 
 const { id = '' } = Astro.params;

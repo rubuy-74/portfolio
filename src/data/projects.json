@@ -1,5 +1,32 @@
 [
   {
+    "title": "pstr",
+    "slug": "pstr",
+    "num_contributors": 1,
+    "description": "This project is a small regex engine written in Go, where I practiced parsing, NFA creation, error handling, and testing, and later deployed it to my portfolio for easy use.",
+    "github_link": "https://github.com/rubuy-74/pstr",
+    "active_link": true,
+    "categories": [
+      "golang",
+			"regex",
+			"testing"
+    ]
+  },
+  {
+    "title": "Dynamic CV",
+    "slug": "dynamic-cv",
+    "num_contributors": 1,
+    "description": "This project sets up a CI/CD pipeline using Typst, GitHub Actions, and Cloudflare Workers to always have the latest version of my CV automatically built and accessible online.",
+    "github_link": "https://github.com/rubuy-74/cv",
+    "active_link": true,
+    "categories": [
+			"typst",
+      "cloudflare workers",
+			"github actions",
+			"CI/CD"
+    ]
+  },
+  {
     "title": "uSettle",
     "slug": "usettle",
     "num_contributors": 4,
