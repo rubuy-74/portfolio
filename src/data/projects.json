@@ -1,22 +1,9 @@
 [
   {
-    "title": "eifn",
-    "slug": "eifn",
-    "num_contributors": 1,
-    "description": "",
-    "github_link": "https://github.com/rubuy-74/eifn",
-    "active_link": true,
-    "categories": [
-      "cloudflare workers",
-			"web",
-			"extension"
-    ]
-  },
-  {
     "title": "pstr",
     "slug": "pstr",
     "num_contributors": 1,
-    "description": "",
+    "description": "This project is a small regex engine written in Go, where I practiced parsing, NFA creation, error handling, and testing, and later deployed it to my portfolio for easy use.",
     "github_link": "https://github.com/rubuy-74/pstr",
     "active_link": true,
     "categories": [
@@ -37,19 +24,6 @@
       "cloudflare workers",
 			"github actions",
 			"CI/CD"
-    ]
-  },
-  {
-    "title": "Portfolio",
-    "slug": "portfolio",
-    "num_contributors": 1,
-    "description": "",
-    "github_link": "https://github.com/rubuy-74/portfolio",
-    "active_link": true,
-    "categories": [
-      "astro",
-			"markdown",
-			"web"
     ]
   },
   {

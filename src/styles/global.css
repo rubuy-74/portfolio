@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+	code {
+    @apply font-serif border-l-4 border-gray-400 text-gray-400 px-4 mt-1
+	}
+
   h1 {
     @apply text-xl font-bold my-5 underline;
   }
 
   strong {
-    @apply text-[#c96442];
+    @apply text-secondary;
   }
 
   a {
-    @apply text-blue-400;
+    @apply text-[#5274DA] underline;
   }
 
   ul {

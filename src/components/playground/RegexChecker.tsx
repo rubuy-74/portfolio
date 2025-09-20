@@ -61,7 +61,7 @@ export default function RegexChecker() {
 			<div>
 				<h1 className="text-3xl font-bold">pstr - Regex Engine</h1>
 				<h2 className='text-secondary'>
-					Note: This project is in ongoing development
+					Note: This project is in ongoing development. There are some bugs, and some features are not as I want. Please take this with a grain of salt.
 				</h2>
 			</div>
 			<div className="flex flex-col gap-4">
