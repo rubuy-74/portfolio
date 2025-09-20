@@ -1,14 +1,43 @@
-<header class="pt-6 px-6 pb-2">
-  <nav class="flex justify-between text-sm text-white border-b pb-1 border-dashed">
-    <div class="flex gap-6">
-      <a href="/" class="text-white hover:text-secondary no-underline">Home</a>
-      <a href="/about-me" class="text-white hover:text-secondary no-underline">About</a>
-      <a href="/contact" class="text-white hover:text-secondary no-underline">Contact</a>
-			<a href="/playground" class="text-white hover:text-secondary no-underline hidden lg:block">Playground</a>
-			<a href="https://cv.rubuy.me" class="text-white hover:text-secondary no-underline">CV</a>
+---
+import { House,User,Notebook,Gamepad,StickyNote } from '@lucide/astro';
+---
+
+<header class="pt-5 px-6 pb-2">
+  <nav class="flex justify-between text-sm text-white border-b pb-2 border-dashed">
+    <div class="flex gap-6 mx-auto">
+			<a href="/" class="flex items-center gap-1 text-white hover:text-secondary no-underline">
+		    <House class="md:hidden"/>
+				<span class="hidden md:block">
+					Home
+				</span>
+			</a>
+			<a href="/about-me" class="flex items-center gap-1 text-white hover:text-secondary no-underline">
+		    <User/ class="md:hidden">
+				<span class="hidden md:block">
+					About
+				</span>
+			</a>
+			<a href="/contact" class="flex items-center gap-1 text-white hover:text-secondary no-underline">
+				<Notebook class="md:hidden"/>
+				<span class="hidden md:block">
+					Contact
+				</span>
+			</a>
+			<a href="/playground" class="flex items-center gap-1 text-white hover:text-secondary no-underline">
+				<Gamepad class="md:hidden"/>
+				<span class="hidden md:block">
+					Playground
+				</span>
+			</a>
+			<a href="https://cv.rubuy.me" class="flex items-center gap-1 text-white hover:text-secondary no-underline">
+				<StickyNote class="md:hidden"/>
+				<span class="hidden md:block">
+					CV
+				</span>
+			</a>
     </div>
-    <div class="hidden lg:block">
-      Rubem Neto
-    </div>
+    <!-- <div class="hidden lg:block"> -->
+    <!--   Rubem Neto -->
+    <!-- </div> -->
   </nav>
 </header>
