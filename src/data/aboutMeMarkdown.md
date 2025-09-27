@@ -1,4 +1,4 @@
-**Hey, my name is Rubem Neto.** I'm just a guy who loves to learn and explore new things. Ever since I was a kid, I've always been curious,constantly diving into new ideas and asking lots of "why?". For me, a question without an answer is just a challenge waiting for someone to figure it out.
+**Hey, my name is Rubem Neto.** I'm just a guy who loves to learn and explore new things. Ever since I was a kid, I've always been curious, constantly diving into new ideas and asking lots of "why?". For me, a question without an answer is just a challenge waiting for someone to figure it out.
 
 I was born in **Brazil** in 2004. I love my country deeply and hope to visit my family and friends there as often as I can. There's something special about being around the people and places that shaped who you are.
 
@@ -8,7 +8,7 @@ When I moved to Portugal in 2019, I got the chance to meet a lot of amazing peop
 
 # What am I working on now?
 
-I’m currently working on strategies to **better organize myself** so I can take more value from my time. So if you have any book recomendations or strategies to improve organization and time management, please hit me up.
+I’m currently working on strategies to **better organize myself** so I can take more value from my time. So if you have any book recommendations or strategies to improve organization and time management, please hit me up.
 
 # Motivation
 
