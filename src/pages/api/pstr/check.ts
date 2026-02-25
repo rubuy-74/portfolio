@@ -6,7 +6,7 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
     
-    const response = await fetch('https://pstr-production.up.railway.app/check', {
+    const response = await fetch('https://pstr-342345532880.europe-west1.run.app/check', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
