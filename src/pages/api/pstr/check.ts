@@ -6,7 +6,11 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
     
+<<<<<<< Updated upstream
     const response = await fetch('https://pstr.onrender.com/check', {
+=======
+    const response = await fetch('https://pstr-342345532880.europe-west1.run.app', {
+>>>>>>> Stashed changes
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
