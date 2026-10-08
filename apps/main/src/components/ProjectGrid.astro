@@ -1,0 +1,20 @@
+---
+import SingleProject from './SingleProject.astro';
+
+import { getListedProjects } from '@portfolio/content';
+const projects = getListedProjects();
+---
+
+<div class="lg:grid lg:grid-cols-2">
+  {projects.map(project => (
+    <SingleProject 
+      title={project.title} 
+      numContributors={project.num_contributors}
+      description={project.description} 
+      githubLink={project.github_link} 
+      slug={project.slug}
+      activeLink={project.active_link}
+      categories={project.categories}
+    />
+  ))}
+</div>

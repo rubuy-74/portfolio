@@ -1,0 +1,74 @@
+---
+import RetroLayout from "../layouts/RetroLayout.astro";
+import Nav from "../components/Nav.astro";
+import { getProfile } from "@portfolio/content";
+import { withBase } from "../utils/base";
+
+const profile = getProfile();
+const [emailUser, emailHost] = profile.email.split("@");
+---
+
+<RetroLayout title="Rubem &gt;&gt; CONTACT ME!!!">
+	<Fragment slot="marquee-top">
+		<span class="magenta">*** DROP ME A LINE!!! ***</span>
+		&nbsp;&nbsp;<span class="cyan">[ sign my digital guestbook ]</span>
+		&nbsp;&nbsp;<span class="yellow">!!! hiring? collaboration? books? IM ALL EARS !!!</span>
+	</Fragment>
+	<Fragment slot="marquee-bot">
+		<span class="yellow">&gt;&gt;&gt; waiting for your message &lt;&lt;&lt;</span> &nbsp;&nbsp;
+		<span class="cyan">* real-time email not included *</span>
+	</Fragment>
+
+	<div class="hero">
+		<h1>SAY HELLO!</h1>
+		<div class="sub">&#9733; {profile.role} &#9733; lets talk!!! &#9733;</div>
+	</div>
+
+	<Nav />
+
+	<h2 class="h1dfn">Contact me</h2>
+
+	<p>Thank you for checking out <b>my website</b>! If you wanna hit me up for anything, be it a <b>project</b>, a <b>job</b>, or just to send me a book recommendation, I'd be excited for us to talk.</p>
+
+	<p>You can send me an email or a message through LinkedIn. <b>I'll probably answer faster if it's an email.</b></p>
+
+	<div class="construction"><div class="inner">
+		&#9993; NO FORMS, JUST VIBES &#9993; copy/paste one of the addresses below
+	</div></div>
+
+	<div class="contactline">
+		<span class="blinkie b2">EMAIL</span>
+		&nbsp; <a href="#" id="em">[enable javascript to see my email]</a>
+	</div>
+	<div class="contactline">
+		<span class="blinkie b3">LINKEDIN</span>
+		&nbsp; <a href={profile.linkedin.url} target="_blank" rel="noopener">{profile.linkedin.label}</a>
+	</div>
+
+	<p class="muted mt">(psst&#8230; I obfuscated my email slightly so no spam bots feast on it. Just decode &laquo;<code style="color:#ff2222;">{emailUser}</code>&raquo; @ for my inbox, or use LinkedIn!)</p>
+
+	<hr class="rainbow-hr" />
+
+	<div class="badges">
+		<span class="blinkie">REPLY FAST</span>
+		<span class="blinkie b2">NO SPAM PLZ</span>
+		<span class="blinkie b3">OPEN 4 COLLAB</span>
+		<span class="blinkie b4">JOB OFFERS WELCOME</span>
+		<span class="blinkie">BOOK REC TXT ONLY</span>
+	</div>
+
+	<div class="center">
+		<a class="btn88" href={withBase("/")}>&#8592; BACK HOME</a>
+		&nbsp;
+		<a class="btn88 cyan" href={withBase("/about-me")}>ABOUT ME &rarr;</a>
+	</div>
+
+	<script is:inline define:vars={{ emailUser, emailHost }}>
+		(function () {
+			var a = document.getElementById("em");
+			var addr = emailUser + "@" + emailHost;
+			a.textContent = addr;
+			a.href = "mailto:" + addr;
+		})();
+	</script>
+</RetroLayout>

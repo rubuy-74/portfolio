@@ -1,0 +1,97 @@
+---
+import "../styles/retro.css";
+import Bgfx from "../components/Bgfx.astro";
+import { getProfile } from "@portfolio/content";
+import { withBase } from "../utils/base";
+
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+const profile = getProfile();
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>{title}</title>
+	<link rel="icon" type="image/png" href={withBase("/favicon-32x32.png")} />
+</head>
+<body>
+	<Bgfx />
+
+	<div class="marquee" aria-hidden="true"><span>
+		<slot name="marquee-top">
+			<span class="magenta">*** WELCOME TO MY HOMEPAGE ***</span>
+			&nbsp;&nbsp;<span class="cyan">[ best viewed in Netscape Navigator 4.0 ]</span>
+			&nbsp;&nbsp;<span class="yellow">!!! NOW 100% HAND-CODED IN NOTEPAD !!!</span>
+			&nbsp;&nbsp;* thanks for visiting * sign my guestbook *
+			&nbsp;&nbsp;<span class="magenta">RUBEM FANCLUB EST. 2004</span>
+			&nbsp;&nbsp;<span class="yellow">under construction forever</span>
+		</slot>
+	</span></div>
+
+	<div class="wrap">
+		<section class="panel">
+			<slot />
+		</section>
+
+		<div class="firestrip"></div>
+
+		<div class="foot">
+			<div>&copy; <span id="yr"></span> {profile.name.toUpperCase()}&#8230; all rights reserved (probably) &#127775;</div>
+			<div class="mt">
+				<a href={withBase("/")}>home</a> |
+				<a href={withBase("/about-me")}>about</a> |
+				<a href={withBase("/contact")}>contact</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="marquee bot" aria-hidden="true"><span>
+		<slot name="marquee-bot">
+			<span class="yellow">!!! SITE LAST UPDATED SOMETIME THIS CENTURY HEYHEYHEY !!!</span>
+			&nbsp;&nbsp;<span class="cyan">[ powered by curiosity &amp; too much coffee ]</span>
+			&nbsp;&nbsp;<span class="magenta">thanks for scrolling all the way down!!! ur officially my #1 fan</span>
+			&nbsp;&nbsp;* no gifs were hotlinked in the making of this page *
+		</slot>
+	</span></div>
+
+	<script>
+		function bumpCounter() {
+			const els = document.querySelectorAll("[data-counter]");
+			if (!els.length) return;
+			const key = "rubuy_counter";
+			const start = 2147;
+			let n = parseInt(localStorage.getItem(key) || String(start - 1), 10);
+			n++;
+			localStorage.setItem(key, String(n));
+			const s = String(n).padStart(7, "0");
+			els.forEach((el) => {
+				el.textContent = s;
+			});
+		}
+
+		function setUpdated() {
+			const el = document.querySelector("[data-updated]");
+			if (!el) return;
+			const d = new Date(document.lastModified || Date.now());
+			el.textContent = d.toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "2-digit" });
+		}
+
+		function setYear() {
+			const el = document.getElementById("yr");
+			if (!el) return;
+			el.textContent = String(new Date().getFullYear());
+		}
+
+		bumpCounter();
+		setUpdated();
+		setYear();
+	</script>
+</body>
+</html>

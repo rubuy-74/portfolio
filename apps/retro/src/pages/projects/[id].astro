@@ -1,0 +1,84 @@
+---
+import RetroLayout from "../../layouts/RetroLayout.astro";
+import Nav from "../../components/Nav.astro";
+import { getProjects } from "@portfolio/content";
+import { withBase } from "../../utils/base";
+import { Content as DynamicCV } from "@portfolio/content/data/projects/dynamic-cv.md";
+import { Content as EverydayDev } from "@portfolio/content/data/projects/everyday-dev.md";
+import { Content as LTWPreLoved } from "@portfolio/content/data/projects/ltw-pre-loved.md";
+import { Content as Niployments } from "@portfolio/content/data/projects/niployments.md";
+import { Content as Portfolio } from "@portfolio/content/data/projects/portfolio.md";
+import { Content as Pstr } from "@portfolio/content/data/projects/pstr.md";
+import { Content as SimpleTombOfTheMask } from "@portfolio/content/data/projects/simple-tomb-of-the-mask.md";
+import { Content as Tinyrp } from "@portfolio/content/data/projects/tiny-rp.md";
+import { Content as Uni } from "@portfolio/content/data/projects/uni.md";
+import { Content as USettle } from "@portfolio/content/data/projects/usettle.md";
+import { Content as WebsiteAE } from "@portfolio/content/data/projects/website-ae.md";
+import { Content as WebsiteNIAEFEUP } from "@portfolio/content/data/projects/website-niaefeup.md";
+
+const projectsMap = {
+	"dynamic-cv": DynamicCV,
+	"everyday-dev": EverydayDev,
+	"ltw-pre-loved": LTWPreLoved,
+	"niployments": Niployments,
+	"portfolio": Portfolio,
+	"pstr": Pstr,
+	"simple-tomb-of-the-mask": SimpleTombOfTheMask,
+	"tiny-rp": Tinyrp,
+	"uni": Uni,
+	"usettle": USettle,
+	"website-ae": WebsiteAE,
+	"website-niaefeup": WebsiteNIAEFEUP,
+};
+
+export function getStaticPaths() {
+	return getProjects().map((project) => ({
+		params: { id: project.slug },
+		props: { project },
+	}));
+}
+
+const { project } = Astro.props;
+const ProjectContent = projectsMap[project.slug as keyof typeof projectsMap];
+---
+
+<RetroLayout title={`Rubem &gt;&gt; ${project.title}`}>
+	<Fragment slot="marquee-top">
+		<span class="magenta">*** PROJECT FILE: {project.title} ***</span> &nbsp;&nbsp;
+		<span class="cyan">[ case study inside bew bew bew ]</span> &nbsp;&nbsp;
+		<span class="yellow">!!! arithmetic brain damage 4 u !!! {project.num_contributors} crack coders</span>
+	</Fragment>
+	<Fragment slot="marquee-bot">
+		<span class="yellow">&gt;&gt;&gt; end of project dossier &lt;&lt;&lt;</span>
+	</Fragment>
+
+	<Nav />
+
+	<div class="projhead">
+		<h1>{project.title}</h1>
+		<span class="contribs">{project.num_contributors}</span>
+		<a class="githubbtn" href={project.github_link} target="_blank" rel="noopener">&#9745; GITHUB &nearr;</a>
+	</div>
+
+	<div class="badges margin" style="justify-content:flex-start;margin:6px 0;">
+		{project.categories.map((category) => (
+			<span class="tag">{category}</span>
+		))}
+	</div>
+
+	<article>
+		<ProjectContent />
+	</article>
+
+	<hr class="rainbow-hr" />
+
+	<div class="construction"><div class="inner">
+		&#9888; HAVE A PROJECT LIKE THIS? HMU &#8594; <a href={withBase("/contact")}>contact</a>
+	</div></div>
+
+	<div class="center">
+		<a class="btn88" href={withBase("/")}>&#8592; BACK HOME</a>
+		&nbsp;
+		<a class="btn88 lime" href={withBase("/#projects")}>MORE PROJECTS &rarr;</a>
+	</div>
+</RetroLayout>

@@ -1,0 +1,13 @@
+---
+import { getProfile } from "@portfolio/content";
+import { withBase } from "../utils/base";
+
+const profile = getProfile();
+---
+
+<div class="navbar">
+	<a class="btn88" href={withBase("/")}>HOME</a>
+	<a class="btn88 alt" href={withBase("/about-me")}>ABOUT ME</a>
+	<a class="btn88 lime" href={withBase("/contact")}>CONTACT</a>
+	<a class="btn88 purple" href={profile.cv} target="_blank" rel="noopener">MY CV</a>
+</div>

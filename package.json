@@ -1,34 +1,17 @@
 {
-  "name": "portifolio",
+  "name": "portfolio-versions",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/react": "^4.3.0",
-    "@astrojs/tailwind": "^6.0.2",
-    "@astrojs/vercel": "^8.0.4",
-    "@embedpdf/core": "^1.1.1",
-    "@embedpdf/engines": "^1.1.1",
-    "@embedpdf/plugin-export": "^1.1.1",
-    "@embedpdf/plugin-interaction-manager": "^1.1.1",
-    "@embedpdf/plugin-loader": "^1.1.1",
-    "@embedpdf/plugin-render": "^1.1.1",
-    "@embedpdf/plugin-scroll": "^1.1.1",
-    "@embedpdf/plugin-selection": "^1.1.1",
-    "@embedpdf/plugin-tiling": "^1.1.1",
-    "@embedpdf/plugin-viewport": "^1.1.1",
-    "@embedpdf/plugin-zoom": "^1.1.1",
-    "@lucide/astro": "^0.511.0",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "astro": "^5.8.1",
-    "lucide-react": "^0.541.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "dev": "npm run dev -w apps/main",
+    "dev:retro": "npm run dev -w apps/retro",
+    "build": "npm run build -w apps/main",
+    "build:hub": "npm run build -w packages/content && npm run build -w apps/retro && node scripts/mount.mjs retro",
+    "mount": "node scripts/mount.mjs retro",
+    "preview": "npm run preview -w apps/main"
   }
 }

@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# mounted version builds (scripts/mount.mjs)
+apps/main/public/retro/
+
 # generated types
 .astro/
 
