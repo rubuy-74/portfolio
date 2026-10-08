@@ -5,9 +5,8 @@ Welcome to my personal portfolio! This repository builds and serves multiple "ve
 ## 🚀 Features
 
 - **One content source**: all personal info (bio, projects, contact, images) lives in `packages/content` and feeds every version — no copy-paste drift between versions.
-- **Multiple versions**: `apps/main` (Astro + React + Tailwind, SSR on Vercel) and `apps/retro` (static, hand-crafted neocities-style) are mounted under one domain.
+- **Multiple versions**: `apps/main` (Astro + Tailwind, SSR on Vercel) and `apps/retro` (static, hand-crafted neocities-style) are mounted under one domain.
 - **Dynamic Project Pages**: each version renders every project page from shared markdown articles.
-- **Playground**: interactive projects (e.g. the pstr regex checker) backed by serverless endpoints in the hub.
 
 ## 📂 Project Structure
 

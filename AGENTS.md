@@ -4,7 +4,7 @@
 
 npm-workspaces monorepo that builds and serves multiple "versions" of the same personal portfolio from one content source on a single domain (`rubuy.me`, `rubuy.me/retro`, ...).
 
-- `apps/main` — the Astro hub site (React + Tailwind, SSR on Vercel). Serves `rubuy.me/*` and owns all serverless endpoints (`src/pages/api/*`, e.g. the pstr regex checker used by the playground).
+- `apps/main` — the Astro hub site (Astro + Tailwind, SSR on Vercel). Serves `rubuy.me/*` and owns any serverless endpoints (`src/pages/api/*`, should a version ever need one).
 - `apps/retro` — the retro version (static Astro build, `base: '/retro'`, mounted under `rubuy.me/retro`).
 - `packages/content` — single source of truth for all personal info: `data/profile.json` (name, role, email, links, interests), `data/projects.json` (+ `listed: false` keeps a project's page alive but out of grids), `data/projects/*.md` (articles), `data/about-me.md`, `assets/` (shared images).
 - `scripts/mount.mjs` — copies `apps/<version>/dist` into `apps/main/public/<version>` so one deploy serves every version.

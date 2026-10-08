@@ -9,7 +9,7 @@ I always wondered how one really works and if it was as difficult as I imagined.
 - Testing
 
 # What did I do?
-I started by implementing the **parsing**, then I implemented **creating the NFA** based on the parsed tokens, and after that I added the **check()** function to test strings against it. Once the core application was working, I deployed it to [Railway]() using their free plan. After deployment, I integrated it into **this portfolio** at [here](https://rubuy.me/playground/pstr).
+I started by implementing the **parsing**, then I implemented **creating the NFA** based on the parsed tokens, and after that I added the **check()** function to test strings against it. Once the core application was working, I deployed it to Railway using their free plan.
 
 # What have I learned?
 I definitely **learned a fair amount of Golang** through this project. On top of that, I had to deal with some CORS issues. At first, I had problems with the integration between the website and the Railway deployment, but in the end it was mostly me being a bit careless. I also got to practice **good habits around error handling and testing in Go**, which was a big plus.

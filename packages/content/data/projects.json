@@ -3,7 +3,7 @@
     "title": "pstr",
     "slug": "pstr",
     "num_contributors": 1,
-    "description": "This project is a small regex engine written in Go, where I practiced parsing, NFA creation, error handling, and testing, and later deployed it to my portfolio for easy use.",
+    "description": "This project is a small regex engine written in Go, where I practiced parsing, NFA creation, error handling, and testing.",
     "github_link": "https://github.com/rubuy-74/pstr",
     "active_link": true,
     "categories": [
