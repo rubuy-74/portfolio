@@ -1,0 +1,28 @@
+---
+import ProjectGrid from '../components/ProjectGrid.astro';
+import Layout from '../layouts/Layout.astro';
+import { getProfile } from '@portfolio/content';
+import { CodeXml,Code } from '@lucide/astro';
+const profile = getProfile();
+---
+<Layout title="Rubem | Portfolio">
+  <section>
+		<div class="mb-5">
+			<h1 class="text-3xl font-bold m-0 mt-5 no-underline">{profile.name}</h1>
+			<p class="mb-6 text-secondary">{profile.role}</p>
+			<p>
+				Hello! I'm a {profile.role} with around <strong>{profile.yearsOfExperience} years of experience working in a team</strong> and contributing to <strong>open source projects</strong>. My main interests are {profile.interests.join(', ')}. I also like to {profile.hobbies.join(' and ')}.
+			</p>
+		</div>
+
+		<h2 class="flex items-center gap-2 text-2xl font-bold leading-snug mb-4">
+		    <Code/>
+		    <div>Projects</div>
+		</h2>
+		<p class="mb-3">
+			Here are some of the projects that I worked on:
+		</p>
+		<ProjectGrid/>
+
+  </section>
+</Layout>

@@ -1,0 +1,166 @@
+[
+  {
+    "title": "pstr",
+    "slug": "pstr",
+    "num_contributors": 1,
+    "description": "This project is a small regex engine written in Go, where I practiced parsing, NFA creation, error handling, and testing, and later deployed it to my portfolio for easy use.",
+    "github_link": "https://github.com/rubuy-74/pstr",
+    "active_link": true,
+    "categories": [
+      "golang",
+			"regex",
+			"testing"
+    ]
+  },
+  {
+    "title": "Dynamic CV",
+    "slug": "dynamic-cv",
+    "num_contributors": 1,
+    "description": "This project sets up a CI/CD pipeline using Typst, GitHub Actions, and Cloudflare Workers to always have the latest version of my CV automatically built and accessible online.",
+    "github_link": "https://github.com/rubuy-74/cv",
+    "active_link": true,
+    "categories": [
+			"typst",
+      "cloudflare workers",
+			"github actions",
+			"CI/CD"
+    ]
+  },
+  {
+    "title": "uSettle",
+    "slug": "usettle",
+    "num_contributors": 4,
+    "description": "Conceptualized and developed an expense-sharing mobile application using Flutter during the Shift Appens hackathon.",
+    "github_link": "https://github.com/rubuy-74/usettle",
+    "active_link":true,
+    "categories": [
+      "flutter",
+			"firebase"
+    ]
+  },
+  {
+    "title": "everyday.dev",
+    "slug": "everyday-dev",
+    "num_contributors": 4,
+    "description": "Built a full-stack web application inspired by the Daily.dev platform using Laravel, enabling developers to create and share tech news.",
+    "github_link": "https://github.com/rubuy-74/LBAW-everyday.dev",
+    "active_link":true,
+    "categories": [
+      "laravel",
+      "html",
+      "javascript",
+      "tailwindcss",
+      "postgresql"
+    ]
+  },
+  {
+    "title": "Website AE",
+    "slug": "website-ae",
+    "num_contributors": 7,
+    "description": "Created a modern website for the FEUP student association using Next.js and Payload CMS.",
+    "github_link": "https://github.com/rubuy-74/website-ae",
+    "active_link":true,
+    "categories": [
+      "nextjs",
+      "tailwindcss",
+      "payloadCMS",
+      "docker"
+    ]
+  },
+  {
+    "title": "LTW Pre-Loved",
+    "slug": "ltw-pre-loved",
+    "num_contributors": 3,
+    "description": "Developed a OLX clone from scratch using pure HTML, CSS, Javascript and PHP.",
+    "github_link": "https://github.com/rubuy-74/ltw-pre-loved",
+    "active_link":true,
+    "categories": [
+      "html",
+      "css",
+      "javascript",
+      "php",
+      "sqlite"
+    ]
+  },
+  {
+    "title": "NIployments",
+    "slug": "niployments",
+    "num_contributors": 12,
+    "description": "Contributed to restructuring the infrastructure of the University’s Informatics Club through a collaborative development effort.",
+    "github_link": "https://github.com/niaefeup/niployments",
+    "active_link":true,
+    "categories": [
+      "devops",
+      "kubernetes",
+      "ansible",
+      "linux",
+      "docker"
+    ]
+  },
+  {
+    "title": "Website NIAEFEUP",
+    "slug": "website-niaefeup",
+    "num_contributors": 7,
+    "description": "Currently contributing to both the backend and frontend for the official website of the University’s Informatics Club.",
+    "github_link": "https://github.com/niaefeup/website-niaefeup-backend",
+    "active_link": true,
+    "categories": [
+      "kotlin",
+      "spring-boot",
+      "svelte"
+    ]
+  },
+  {
+    "title": "Simple Tomb of the Mask",
+    "slug": "simple-tomb-of-the-mask",
+    "num_contributors": 3,
+    "description": "Created a simple clone of the Tomb of the Mask game using the Lanterna framework in Java.",
+    "github_link": "https://github.com/rubuy-74/feup-ldts",
+    "active_link":true,
+    "categories": [
+      "java",
+      "lanterna",
+      "pitest"
+    ]
+  },
+  {
+    "title": "UNI",
+    "slug": "uni",
+    "num_contributors": 63,
+    "description": "Participated in a large-scale project over the course of a year, now actively used by over 5,000 students.",
+    "github_link": "https://github.com/niaefeup/uni",
+    "active_link":true,
+    "categories": [
+      "flutter"
+    ]
+  },
+  {
+    "title": "Portfolio",
+    "slug": "portfolio",
+    "num_contributors": 1,
+    "description": "This very portfolio website, restructured as a monorepo that builds and serves multiple versions of itself.",
+    "github_link": "https://github.com/rubuy-74",
+    "active_link": true,
+    "listed": false,
+    "categories": [
+      "astro",
+      "typescript",
+      "tailwindcss"
+    ]
+  },
+  {
+    "title": "Tiny-RP",
+    "slug": "tiny-rp",
+    "num_contributors": 1,
+    "description": "The beginning of my journey learning Golang: a roleplay server with a simulated Docker network and Viper-based configuration.",
+    "github_link": "https://github.com/rubuy-74",
+    "active_link": true,
+    "listed": false,
+    "categories": [
+      "golang",
+      "make",
+      "docker",
+      "viper"
+    ]
+  }
+]

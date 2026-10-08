@@ -1,0 +1,20 @@
+{
+  "name": "Rubem Neto",
+  "role": "Software Engineering Student",
+  "yearsOfExperience": 2,
+  "interests": [
+    "backend development",
+    "communication systems",
+    "networking"
+  ],
+  "hobbies": [
+    "talk about movies"
+  ],
+  "email": "rubemviscard2635@gmail.com",
+  "linkedin": {
+    "url": "https://www.linkedin.com/in/rubemneto74",
+    "label": "linkedin.com/in/rubemneto74"
+  },
+  "github": "https://github.com/rubuy-74",
+  "cv": "https://cv.rubuy.me"
+}

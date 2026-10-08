@@ -1,0 +1,24 @@
+{
+  "name": "@portfolio/main",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run build:hub --prefix ../.. && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vercel": "^8.0.4",
+    "@lucide/astro": "^0.511.0",
+    "@portfolio/content": "*",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "astro": "^5.8.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}

@@ -1,0 +1,68 @@
+---
+import RetroLayout from "../layouts/RetroLayout.astro";
+import Nav from "../components/Nav.astro";
+import { getListedProjects, getProfile } from "@portfolio/content";
+import { withBase } from "../utils/base";
+
+const profile = getProfile();
+const projects = getListedProjects();
+const interests =
+	profile.interests.slice(0, -1).join(", ") + " and " + profile.interests[profile.interests.length - 1];
+const hobbies = profile.hobbies.join(" and ");
+---
+
+<RetroLayout title="Rubem &gt;&gt; WELCOME!!!">
+	<div class="hero">
+		<h1>{profile.name.toUpperCase()}</h1>
+		<div class="sub">&#9733; {profile.role} &#9733; Welcome 2 my homepage!!! &#9733;</div>
+		<div class="badges">
+			<span class="blinkie">OPEN FOR HIRE</span>
+			<span class="blinkie b2">WILL CODE 4 FOOD</span>
+			<span class="blinkie b3">HAND&#8209;CODED HTML</span>
+			<span class="blinkie b4">BEST VIEWED 800x600</span>
+		</div>
+	</div>
+
+	<p>
+		Hello!!! I'm a <b>{profile.role}</b> with around <b>{profile.yearsOfExperience} years of experience working in a team</b> and contributing to <b>open source projects</b>. My main interests are <em>{interests}</em>. I also like to {hobbies}.
+	</p>
+
+	<Nav />
+
+	<div class="construction"><div class="inner">
+		&#9888; WARNING &#9888; This site is and will be ALWAYS UNDER CONSTRUCTION &#9888;
+	</div></div>
+
+	<h2 class="h1dfn" id="projects">My Projects!!!</h2>
+	<p class="center muted">Here are some of the projects that I worked on (click a card 2 read more!!!)</p>
+
+	<div class="grid">
+		{projects.map((project) => (
+			<a class="card" href={withBase(`/projects/${project.slug}`)}>
+				<h3>{project.title}</h3>
+				<div class="contribs">{project.num_contributors}</div>
+				<div class="tags">
+					{project.categories.map((category) => (
+						<span class="tag">{category}</span>
+					))}
+				</div>
+				<p>{project.description}</p>
+			</a>
+		))}
+	</div>
+
+	<hr class="rainbow-hr" />
+
+	<div class="counter">
+		You are visitor&#8230;<br />
+		<span class="digits" data-counter>0002148</span>
+		<div class="mt">since <span data-updated>forever ago</span> &#9670; powered by &amp;lund;</div>
+	</div>
+
+	<div class="badges">
+		<span class="blinkie">NO AI WAS HARMED</span>
+		<span class="blinkie b2">TYPE&#8209;SAFE & PROUD</span>
+		<span class="blinkie b3">TABLES 4 LAYOUT? NO.</span>
+		<span class="blinkie b4">FTP FILES 4 LIFE</span>
+	</div>
+</RetroLayout>
