@@ -32,6 +32,7 @@
   }
 
   img {
-    @apply mx-auto my-4;
+    @apply mx-auto my-4 max-w-full;
+    height: auto;
   }
 }

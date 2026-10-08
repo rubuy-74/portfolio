@@ -8,18 +8,7 @@ import { Content as AboutMe } from "@portfolio/content/data/about-me.md";
 const profile = getProfile();
 ---
 
-<RetroLayout title="Rubem &gt;&gt; ABOUT ME">
-	<Fragment slot="marquee-top">
-		<span class="magenta">*** ABOUT THE MAN MYTH LEGEND ***</span>
-		&nbsp;&nbsp;<span class="cyan">learn all my dark secrets here &gt;&gt;&gt;</span>
-		&nbsp;&nbsp;<span class="yellow">!!!别的 ~ 读读 ~ read me ~ 學 ~</span>
-	</Fragment>
-	<Fragment slot="marquee-bot">
-		<span class="yellow">&gt;&gt;&gt; end of transmission &lt;&lt;&lt;</span> &nbsp;&nbsp;
-		<span class="cyan">did u read all of that?? wow ok ur cool</span> &nbsp;&nbsp;
-		<span class="magenta">* xavier approves *</span>
-	</Fragment>
-
+<RetroLayout title="Rubem >> ABOUT ME">
 	<div class="hero">
 		<h1>{profile.name.toUpperCase()}</h1>
 		<div class="sub">&#9733; {profile.role} &#9733; this page is all about meeeee &#9733;</div>
@@ -31,19 +20,6 @@ const profile = getProfile();
 
 	<div class="md">
 		<AboutMe />
-	</div>
-
-	<div class="construction"><div class="inner">
-		&#9888; MOTIVATION OVERDRIVE &#9888; push 2 keep scrolling
-	</div></div>
-
-	<div class="badges">
-		<span class="blinkie">STAR WARS FAN</span>
-		<span class="blinkie b2">FILM ENJOYER</span>
-		<span class="blinkie b3">WALK &amp; TOUCH GRASS</span>
-		<span class="blinkie b4">PUZZLE ADDICT</span>
-		<span class="blinkie">BORN IN BRAZIL</span>
-		<span class="blinkie b3">LIVES IN PORTUGAL</span>
 	</div>
 
 	<hr class="rainbow-hr" />

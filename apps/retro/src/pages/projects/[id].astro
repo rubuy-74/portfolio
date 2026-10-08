@@ -42,16 +42,7 @@ const { project } = Astro.props;
 const ProjectContent = projectsMap[project.slug as keyof typeof projectsMap];
 ---
 
-<RetroLayout title={`Rubem &gt;&gt; ${project.title}`}>
-	<Fragment slot="marquee-top">
-		<span class="magenta">*** PROJECT FILE: {project.title} ***</span> &nbsp;&nbsp;
-		<span class="cyan">[ case study inside bew bew bew ]</span> &nbsp;&nbsp;
-		<span class="yellow">!!! arithmetic brain damage 4 u !!! {project.num_contributors} crack coders</span>
-	</Fragment>
-	<Fragment slot="marquee-bot">
-		<span class="yellow">&gt;&gt;&gt; end of project dossier &lt;&lt;&lt;</span>
-	</Fragment>
-
+<RetroLayout title={`Rubem >> ${project.title}`}>
 	<Nav />
 
 	<div class="projhead">
@@ -71,10 +62,6 @@ const ProjectContent = projectsMap[project.slug as keyof typeof projectsMap];
 	</article>
 
 	<hr class="rainbow-hr" />
-
-	<div class="construction"><div class="inner">
-		&#9888; HAVE A PROJECT LIKE THIS? HMU &#8594; <a href={withBase("/contact")}>contact</a>
-	</div></div>
 
 	<div class="center">
 		<a class="btn88" href={withBase("/")}>&#8592; BACK HOME</a>

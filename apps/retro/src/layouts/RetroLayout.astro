@@ -24,17 +24,6 @@ const profile = getProfile();
 <body>
 	<Bgfx />
 
-	<div class="marquee" aria-hidden="true"><span>
-		<slot name="marquee-top">
-			<span class="magenta">*** WELCOME TO MY HOMEPAGE ***</span>
-			&nbsp;&nbsp;<span class="cyan">[ best viewed in Netscape Navigator 4.0 ]</span>
-			&nbsp;&nbsp;<span class="yellow">!!! NOW 100% HAND-CODED IN NOTEPAD !!!</span>
-			&nbsp;&nbsp;* thanks for visiting * sign my guestbook *
-			&nbsp;&nbsp;<span class="magenta">RUBEM FANCLUB EST. 2004</span>
-			&nbsp;&nbsp;<span class="yellow">under construction forever</span>
-		</slot>
-	</span></div>
-
 	<div class="wrap">
 		<section class="panel">
 			<slot />
@@ -51,15 +40,6 @@ const profile = getProfile();
 			</div>
 		</div>
 	</div>
-
-	<div class="marquee bot" aria-hidden="true"><span>
-		<slot name="marquee-bot">
-			<span class="yellow">!!! SITE LAST UPDATED SOMETIME THIS CENTURY HEYHEYHEY !!!</span>
-			&nbsp;&nbsp;<span class="cyan">[ powered by curiosity &amp; too much coffee ]</span>
-			&nbsp;&nbsp;<span class="magenta">thanks for scrolling all the way down!!! ur officially my #1 fan</span>
-			&nbsp;&nbsp;* no gifs were hotlinked in the making of this page *
-		</slot>
-	</span></div>
 
 	<script>
 		function bumpCounter() {

@@ -42,21 +42,6 @@ body{
   padding:0 0 40px;
 }
 
-/* ---- marquee ---- */
-.marquee{
-  background:#000; color:var(--c-lime);
-  border-top:3px ridge var(--c-cyan);
-  border-bottom:3px ridge var(--c-cyan);
-  font-family:'Comic Neue',sans-serif; font-weight:700;
-  letter-spacing:1px; overflow:hidden; white-space:nowrap; padding:6px 0;
-}
-.marquee span{ display:inline-block; padding-left:100%; animation:scroll 22s linear infinite; }
-.marquee.bot span{ animation-duration:30s; animation-direction:reverse; }
-@keyframes scroll{ to{ transform:translateX(-100%); } }
-.marquee .magenta{ color:var(--c-hotpink); }
-.marquee .yellow{ color:#ffff00; }
-.marquee .cyan{ color:var(--c-cyan); }
-
 /* ---- hero ---- */
 .hero{ text-align:center; margin-bottom:10px; }
 .hero h1{
@@ -101,24 +86,9 @@ a:visited{ color:var(--c-vlink); }
 b,strong{ color:#c01818; }
 em{ color:#7a1fbf; }
 
-/* ---- blinkies ---- */
-.blinkie{
-  display:inline-block; padding:2px 8px; font-weight:700; font-size:12px; letter-spacing:1px;
-  border:2px solid #000; background:#ffff00; color:#000;
-  box-shadow:0 0 0 2px #000 inset; animation:blink 1s steps(2,end) infinite;
-}
-.blinkie.b2{ background:#ff3399; color:#fff; animation-duration:1.4s; }
-.blinkie.b3{ background:#00e5ff; animation-duration:.8s; }
-.blinkie.b4{ background:#aaff00; animation-delay:.25s; }
-@keyframes blink{ 50%{ opacity:.35; } }
-
 /* ---- divider ---- */
 .divider{ height:8px; margin:18px 0; background:repeating-linear-gradient(90deg,#ff3399 0 10px,#00e5ff 10px 20px,#aaff00 20px 30px,#cc33ff 30px 40px); border:2px solid #000; }
 .rainbow-hr{ border:0; height:6px; background:linear-gradient(90deg,#ff004d,#ff8400,#ffe600,#16d628,#00b3ff,#7a1fbf); margin:16px 0; }
-
-/* ---- construction banner ---- */
-.construction{ margin:14px 0; border:3px dashed #000; background:repeating-linear-gradient(45deg,#ffec64 0 14px,#000 14px 28px); padding:4px; }
-.construction .inner{ background:#ffec64; color:#000; font-weight:700; text-align:center; padding:8px; font-size:13px; }
 
 /* ---- project grid ---- */
 .grid{ display:grid; grid-template-columns:1fr; gap:14px; }
@@ -150,7 +120,7 @@ em{ color:#7a1fbf; }
 /* ---- project page article ---- */
 article h1,article h2{ font-family:Georgia,serif; color:#7a1fbf; margin:1.1em 0 .4em; font-size:20px; text-shadow:1px 1px 0 #ff3399; }
 article h1::before,article h2::before{ content:">> "; color:#ff2222; }
-article img{ max-width:100%; border:4px ridge #444; margin:8px 0; box-shadow:0 0 0 2px #000; }
+article img{ max-width:100%; height:auto; border:4px ridge #444; margin:8px 0; box-shadow:0 0 0 2px #000; }
 article ul{ margin:.4em 0; }
 article code{ background:#eee; padding:0 4px; border:1px solid #999; font-family:monospace; }
 
